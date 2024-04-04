@@ -1,20 +1,22 @@
 <script setup lang="ts">
-defineProps<{
-  msg: string
-}>()
+import type { BlogType } from '@/types/blog'
 
-import { useBlogStore } from '../../stores/blog'
-const blog = useBlogStore()
+defineProps<{
+  blog: BlogType
+}>()
 </script>
 
 <template>
-  <div class="greetings">
-    <h1 class="text-3xl font-bold underline">{{ msg }}</h1>
-    <h3>
-      You’ve successfully created a project with
-      <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> +
-      <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>. What's next?
-    </h3>
+  <div class="w-4/5">
+    <a href="blog/1" class="flex flex-col bg-white md:flex-row hover:bg-white">
+      <img :src="blog.urlToImage" alt="" class="w-3/5 h-96" />
+      <div class="flex flex-col justify-between p-4 leading-normal w-2/5">
+        <span class="topic">{{ blog.author }}</span>
+        <h3 class="text-3xl font-bold text-black-700 mb-2">{{ blog.title }}</h3>
+        <div class="icon-list"></div>
+        <div class="publishDate">{{ blog.publishedAt }}</div>
+      </div>
+    </a>
   </div>
 </template>
 
