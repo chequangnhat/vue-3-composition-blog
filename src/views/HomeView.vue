@@ -1,25 +1,18 @@
 <script setup lang="ts">
 import CardItem from '@/components/Card/CardItem.vue'
+import HeaderComponent from '@/components/Header/HeaderComponent.vue'
 import { useBlogStore } from '@/stores/blog'
 import { onMounted } from 'vue'
 const useBlog = useBlogStore()
 onMounted(() => {
   useBlog.getAllBlogs()
+  console.log(useBlog)
 })
 </script>
 
 <template>
-  <div class="home-container ">
-    <div class="home-header xl:max-w-[80%] flex justify-between items-center mx-auto ">
-      <div class="font-black text-2xl"><span class="text-white">Read</span><span class="text-[#FFD369]">it</span><span class="text-white">.</span></div>
-      <!-- <Icon icon="mdi-light:home" /> -->
-      <div class="flex justify-center items-center">
-        <div>Home</div>
-        <div>Articles</div>
-        <div>Team</div>
-        <div>Contact</div>
-      </div>
-    </div>
+  <div class="home-container w-full h-screen bg-gradient-to-tr from-[#F437F8] to-[#FABD67] pt-10">
+    <HeaderComponent />
     <div>
       <span>Hello! Welcome to</span>
       <span>Readit blog</span>
@@ -33,4 +26,5 @@ onMounted(() => {
       <CardItem v-if="index < 4" :blog="item" />
     </div>
   </div>
+  đ
 </template>
