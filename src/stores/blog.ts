@@ -1,5 +1,4 @@
 import { axiosAPI } from '@/api/axios'
-import { TagData } from '@/data/Tag'
 import type { BlogType, BlogResponse } from '@/types/blog'
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
@@ -12,14 +11,8 @@ export const useBlogStore = defineStore('blog', () => {
     )
     blogs.value = response.articles
   }
-  const tags = ref<string[]>([])
-  const getAllTags = async () => {
-    tags.value = TagData
-  }
   return {
     blogs,
-    getAllBlogs,
-    tags,
-    getAllTags
+    getAllBlogs
   }
 })
