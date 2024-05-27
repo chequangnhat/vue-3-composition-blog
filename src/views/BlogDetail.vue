@@ -1,8 +1,17 @@
+<script setup>
+import CommentList from '@/components/Comment/CommentList.vue'
+import ContentText from '@/components/Content/ContentText.vue'
+import RightSidebar from '@/components/Sidebar/RightSidebar.vue'
+import CommentForm from '@/components/Comment/CommentForm.vue'
+</script>
 <template>
-  <div class="blog-detail">
-    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum autem sunt at nostrum nemo
-    aliquid ipsam! Consectetur fugit architecto quis expedita reprehenderit magni, qui vitae
-    quisquam, officiis exercitationem reiciendis harum?
+  <div class="blog-detail grid grid-cols-5 gap-6 w-[80%] mx-auto my-10">
+    <div class="content col-span-3">
+      <ContentText />
+      <CommentList v-for="number in 2" :key="number" />
+      <CommentForm />
+    </div>
+    <RightSidebar />
   </div>
 </template>
 
