@@ -1,15 +1,16 @@
-<script setup>
-import { reactive } from 'vue'
+<script setup lang="ts">
 import SearchForm from './SidebarComponent/SearchForm.vue'
 import CategoryComponent from './SidebarComponent/CategoryComponent.vue'
 import HeaderLabel from '../Title/HeaderLabel.vue'
 import CardRecent from './SidebarComponent/CardRecent.vue'
 import TagComponent from './SidebarComponent/TagComponent.vue'
+import type { TagType } from '@/types/tag.ts'
 
-const state = reactive({
-  tags: ['CAT', 'ABSTRACT', 'PEOPLE', 'PERSON', 'MODEL', 'DELICIOUS', 'DESSERTS', 'DRINKS'],
-  categories: ['Illustration', 'Branding', 'Application', 'Design', 'Marketing']
-})
+defineProps<{
+  tagList: TagType[]
+  paragraph: string
+  categoryList: string[]
+}>()
 </script>
 
 <template>
@@ -19,11 +20,7 @@ const state = reactive({
     </div>
     <div class="categories mb-10">
       <HeaderLabel label="categories" />
-      <CategoryComponent
-        v-for="category in state.categories"
-        :key="category"
-        :category="category"
-      />
+      <CategoryComponent v-for="category in categoryList" :key="category" :category="category" />
     </div>
     <div class="blog-recent mb-10">
       <HeaderLabel label="recent blog" />
@@ -32,15 +29,13 @@ const state = reactive({
     <div class="tag mb-10">
       <HeaderLabel label="Tag Cloud" />
       <div class="flex flex-row flex-wrap text-xs">
-        <TagComponent v-for="tag in state.tags" :key="tag" :tagName="tag" />
+        <TagComponent v-for="tag in tagList" :key="tag" :tagName="tag.label" />
       </div>
     </div>
     <div class="tag mb-10">
       <HeaderLabel label="Paragraph" />
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates molestias veritatis
-        illum vel, reprehenderit modi doloribus adipisci commodi repellat aliquid! Sapiente porro
-        quam aspernatur illum earum vel consectetur enim quasi?
+        {{ paragraph }}
       </p>
     </div>
   </div>
