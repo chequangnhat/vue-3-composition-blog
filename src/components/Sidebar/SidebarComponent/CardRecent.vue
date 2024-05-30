@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import IconCalendar from '@/components/icons/IconCalendar.vue'
 </script>
 

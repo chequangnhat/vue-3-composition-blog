@@ -29,7 +29,7 @@ defineProps<{
     <div class="tag mb-10">
       <HeaderLabel label="Tag Cloud" />
       <div class="flex flex-row flex-wrap text-xs">
-        <TagComponent v-for="tag in tagList" :key="tag" :tagName="tag.label" />
+        <TagComponent v-for="tag in tagList" :key="tag.label" :tagName="tag.label" />
       </div>
     </div>
     <div class="tag mb-10">
