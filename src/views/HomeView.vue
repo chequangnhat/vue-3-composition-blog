@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import CardItem from '@/components/Card/CardItem.vue'
 import HeaderComponent from '@/components/Header/HeaderComponent.vue'
 import PressureLowFill from '@/components/icons/PressureLowFill.vue'
@@ -26,5 +26,4 @@ import PressureLowFill from '@/components/icons/PressureLowFill.vue'
   <div class="card-container w-5/6 mx-auto mt-28">
     <CardItem v-for="index in 4" :key="index" :idBlog="index" />
   </div>
-  fff
 </template>

@@ -13,5 +13,3 @@ defineProps<{
     <IconChevronRight />
   </div>
 </template>
-
-<style></style>

@@ -3,8 +3,8 @@ import { reactive, toRefs, ref, watch } from 'vue'
 import FieldComponent from './CommentFormComponent/FieldComponent.vue'
 import TextareaComponent from './CommentFormComponent/TextareaComponent.vue'
 import ButtonComponent from './CommentFormComponent/ButtonComponent.vue'
-import { useCheckError } from '@/composable/useCheckError.ts'
-import { ERROR_TYPE } from '../../types/errors.ts'
+import { useCheckError } from '@/composable/useCheckError'
+import type { ERROR_TYPE } from '@/types/errors'
 
 const comment = reactive({
   name: '',
@@ -27,6 +27,7 @@ const openModal = () => {
     isOpenModal.value = true
   }
 }
+
 const sendComment = () => {
   name.value = ''
   email.value = ''
@@ -34,9 +35,11 @@ const sendComment = () => {
   message.value = ''
   closeModal()
 }
+
 const closeModal = () => {
   isOpenModal.value = false
 }
+
 const checkError = () => {
   nameError.value = useCheckError(name.value, true, 50)
   emailError.value = useCheckError(email.value, true, 50)
@@ -44,9 +47,11 @@ const checkError = () => {
   messageError.value = useCheckError(message.value, true, 250)
   return isObjectOfEmptyArrays(errors)
 }
+
 const isObjectOfEmptyArrays = (obj: ERROR_TYPE): boolean => {
   return Object.values(obj).every((array) => Array.isArray(array) && array.length === 0)
 }
+
 watch(name, () => (nameError.value = []))
 watch(email, () => (emailError.value = []))
 watch(website, () => (websiteError.value = []))
@@ -85,5 +90,3 @@ watch(message, () => (messageError.value = []))
     </div>
   </Teleport>
 </template>
-
-<style></style>

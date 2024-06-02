@@ -27,5 +27,3 @@ const onInput = (event: Event) => {
     </div>
   </div>
 </template>
-
-<style></style>

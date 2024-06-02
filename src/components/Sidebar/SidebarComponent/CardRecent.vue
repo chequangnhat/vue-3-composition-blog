@@ -17,5 +17,3 @@ import IconCalendar from '@/components/icons/IconCalendar.vue'
     </div>
   </div>
 </template>
-
-<style></style>

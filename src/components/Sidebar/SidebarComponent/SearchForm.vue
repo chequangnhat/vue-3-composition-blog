@@ -17,5 +17,3 @@ import IconSearch from '@/components/icons/IconSearch.vue'
     </button>
   </div>
 </template>
-
-<style></style>

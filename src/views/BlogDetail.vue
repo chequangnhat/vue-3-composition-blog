@@ -4,8 +4,8 @@ import CommentList from '@/components/Comment/CommentList.vue'
 import RightSidebar from '@/components/Sidebar/RightSidebar.vue'
 import CommentForm from '@/components/Comment/CommentForm.vue'
 import ContentComponent from '@/components/Content/ContentComponent.vue'
-import { tags } from '@/mockData/tags.ts'
-import { categories } from '@/mockData/categories.ts'
+import { tags } from '@/mockData/tags'
+import { categories } from '@/mockData/categories'
 
 const sidebarData = reactive({
   tagList: tags,
@@ -30,7 +30,7 @@ provide('tag', selectedTag)
     </div>
     <RightSidebar
       :tagList="tagList"
-      :paragraph="paragraphContent.content"
+      :paragraph="paragraphContent?.content ?? ''"
       :categoryList="categoryList"
     />
   </div>
