@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import TitleContent from './ContentComponent/TitleContent.vue'
 import ParagraphComponent from './ContentComponent/ParagraphComponent.vue'
 import ImageComponent from './ContentComponent/ImageComponent.vue'
@@ -30,5 +30,3 @@ import ImageComponent from './ContentComponent/ImageComponent.vue'
     />
   </div>
 </template>
-
-<style></style>

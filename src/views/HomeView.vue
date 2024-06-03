@@ -1,14 +1,7 @@
-<script setup lang="ts">
+<script setup>
 import CardItem from '@/components/Card/CardItem.vue'
 import HeaderComponent from '@/components/Header/HeaderComponent.vue'
 import PressureLowFill from '@/components/icons/PressureLowFill.vue'
-import { useBlogStore } from '@/stores/blog'
-import { onMounted } from 'vue'
-const useBlog = useBlogStore()
-onMounted(() => {
-  useBlog.getAllBlogs()
-  console.log(useBlog)
-})
 </script>
 
 <template>
@@ -29,15 +22,8 @@ onMounted(() => {
         <PressureLowFill />
       </div>
     </div>
-
-    <!-- <div v-for="(item, index) in useBlog.blogs" :key="index">
-      <CardItem v-if="index < 4" :blog="item" />
-    </div> -->
   </div>
   <div class="card-container w-5/6 mx-auto mt-28">
-    <CardItem />
-    <CardItem />
-    <CardItem />
+    <CardItem v-for="index in 4" :key="index" :idBlog="index" />
   </div>
-  fff
 </template>

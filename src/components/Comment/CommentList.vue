@@ -1,5 +1,3 @@
-<script setup></script>
-
 <template>
   <div class="flex flex-row gap-5 my-9">
     <img
@@ -23,5 +21,3 @@
     </div>
   </div>
 </template>
-
-<style></style>

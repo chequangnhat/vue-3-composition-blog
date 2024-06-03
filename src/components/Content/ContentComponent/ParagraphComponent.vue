@@ -7,5 +7,3 @@ defineProps<{
 <template>
   <p class="my-3">{{ text }}</p>
 </template>
-
-<style></style>

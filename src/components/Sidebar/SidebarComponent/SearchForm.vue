@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import IconSearch from '@/components/icons/IconSearch.vue'
 </script>
 
@@ -17,5 +17,3 @@ import IconSearch from '@/components/icons/IconSearch.vue'
     </button>
   </div>
 </template>
-
-<style></style>
